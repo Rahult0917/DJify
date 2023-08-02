@@ -1,0 +1,49 @@
+.inputs{
+display: flex;
+  flex-direction: column;
+  margin-top: 98px;
+  width: 300px;
+  position: fixed; /* Position the element */
+  top: 0; /* Align it to the top of the page */
+  bottom: 0; /* Extend it to the full height of the page */
+  background-color: #33393ac2; /* Set the background color */
+  padding-top: 70px;
+  border-radius: 8px;
+}
+
+
+
+.inputs input {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 3px solid #022507;
+    border-radius: 8px;
+  }
+
+  .inputs button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #2da72d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .circle {
+    height: 250px;
+    width: 250px;
+    background-color: #41d9e4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    position: fixed; /* Position the element */
+    top: 50%; /* Position it 50% from the top */
+    left: 50%; /* Position it 50% from the left */
+    transform: translate(-50%, -50%); /* Center it precisely */
+  }

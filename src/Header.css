@@ -1,0 +1,18 @@
+
+.title{
+    display: flex;
+    align-items: center;
+    height: 35px;
+    background: linear-gradient(90deg, #092e0a 1.18%, #61c286 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    justify-content: center;
+    font-family: 'Circular', sans-serif;
+}
+
+.img{
+    width: 5%;
+}
+
+
