@@ -1,7 +1,6 @@
 import { useState,useEffect } from 'react'
 import Header from './Header'
 import Input from './Input'
-import './App.css'
 
 const CLIENT_ID = "330fa14d7def4b9f9955b0c12a160e25";
 const CLIENT_SECRET = "274b0417c6334a608518fdd4ec9490fd";

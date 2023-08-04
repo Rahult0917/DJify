@@ -1,4 +1,3 @@
-import './Input.css'
 import Data from './Data'
 import React, {useState} from 'react'
 
@@ -37,8 +36,8 @@ const Input = (props) => {
             <input type="text" name="firstName" placeholder="Spotify Artist 1" value={formData.firstName} onChange={handleChange}></input>
             <input type="text" name="lastName" placeholder="Spotify Artist 2" value={formData.lastName}onChange={handleChange} ></input>
             <button type="submit">Find a match!</button >
-            {isSubmitted &&<Data datas={formData} accessToken={access} />}
         </div>
+            {isSubmitted &&<Data datas={formData} accessToken={access} />}
     </form>
   )
 }

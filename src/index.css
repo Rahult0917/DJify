@@ -1,3 +1,133 @@
 body{
   background-color: rgb(31, 28, 28);
 }
+
+.inputs{
+  display: flex;
+    flex-direction: column;
+    margin-top: 98px;
+    width: 300px;
+    position: fixed; 
+    top: 0; 
+    bottom: 0; 
+    background-color: #33393ac2; 
+    padding-top: 70px;
+    border-radius: 8px;
+  }
+  
+  
+  
+.inputs input {
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+      border: 3px solid #022507;
+      border-radius: 8px;
+  }
+  
+.inputs button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #2da72d;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+  
+.title{
+  display: flex;
+  align-items: center;
+  height: 35px;
+  background: linear-gradient(90deg, #092e0a 1.18%, #61c286 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  justify-content: center;
+  font-family: 'Circular', sans-serif;
+}
+
+.img{
+  width: 5%;
+}
+
+.load{
+  font-weight: bold;
+  color: #ffffff; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  margin: 0; 
+}
+  
+.gallery {
+    display: flex;
+    overflow-x: scroll;
+    justify-content: flex-start;
+    align-items: center;
+    height: 200px;
+    gap: 10px; 
+    width: 100%;
+    margin-top: 300px; 
+    padding-left: 340px;
+}
+
+.artistStyle {
+  font-size: 8px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #c44a64;
+  padding: 8px;
+  border-radius: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.artistStyle:hover {
+  background-color: #ff4500;
+  transform: scale(2.05);
+}
+
+
+.songStyle {
+  font-size: 8px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #a81490;
+  padding: 8px;
+  border-radius: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.songStyle:hover {
+  background-color: #ff4500;
+  transform: scale(2.05);
+}
+
+.traitStyle {
+  font-size: 8px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #130b0d;
+  padding: 8px;
+  border-radius: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.traitStyle:hover {
+  background-color: #ff4500;
+  transform: scale(2.05);
+}
