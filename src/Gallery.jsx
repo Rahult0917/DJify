@@ -1,19 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const Gallery = (props) => {
-  const {data} = props;
-  const circleStyle = {
-    width: 121,
-    height: 112,
-    backgroundColor: "lightblue",
-    borderRadius: '50%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  };
+  const {data,option} = props;
 
-  const curData = data[0].name;
-  console.log(curData)
+  console.log(option)
+
+  useEffect(()=>{
+    if (option=='Energy'){
+      
+    }
+    else if (option=='Tempo'){
+      console.log('adada')
+    }
+    else if (option=='Dance'){
+      console.log('adada')
+    }
+  },[])
+  
+
+
+
   return (
     <div className="gallery">
       {data.map((item) => (

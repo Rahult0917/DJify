@@ -6,8 +6,6 @@ const Data = (props) => {
     const [trackData, setTrackData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-
-    console.log(datas)
     
     useEffect(() => {
       const fetchData = async () => {
@@ -94,8 +92,6 @@ const Data = (props) => {
       fetchData();
     }, [accessToken, datas]);
     
-    console.log(trackData);
-    console.log("rendered")
 
 
     if (isLoading) {
@@ -103,7 +99,7 @@ const Data = (props) => {
       }
 
   return (
-    <Gallery data={trackData}/>
+    <Gallery data={trackData} option={datas.option}/>
   )
 }
 
