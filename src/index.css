@@ -1,6 +1,8 @@
 body{
-  background-color: rgb(31, 28, 28);
+  background-color: rgb(31, 28, 28); /*adds a black background*/
 }
+
+/*input is formatted so it is on the left side*/
 
 .inputs{
   display: flex;
@@ -15,7 +17,7 @@ body{
     border-radius: 8px;
   }
   
-  
+/*formats the input for artist text*/
   
 .inputs input {
       margin: 10px;
@@ -24,6 +26,8 @@ body{
       border: 3px solid #022507;
       border-radius: 8px;
   }
+
+  /*formats the input for submit button*/
   
 .inputs button {
       margin: 10px;
@@ -35,7 +39,7 @@ body{
       border-radius: 4px;
       cursor: pointer;
   }
-  
+  /*formats the title of app*/
 .title{
   display: flex;
   align-items: center;
@@ -48,19 +52,13 @@ body{
   font-family: 'Circular', sans-serif;
 }
 
+/*spotify image*/
+
 .img{
   width: 5%;
 }
 
-.load{
-  font-weight: bold;
-  color: #ffffff; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; 
-  margin: 0; 
-}
+/*formatting to make gallery centered and scrollable*/
   
 .gallery {
     display: flex;
@@ -73,6 +71,7 @@ body{
     margin-top: 300px; 
     padding-left: 340px;
 }
+
 
 .artistStyle {
   font-size: 8px;
@@ -89,10 +88,12 @@ body{
 }
 
 .artistStyle:hover {
-  background-color: #ff4500;
+  background-color: #0fdf20;
   transform: scale(2.05);
 }
 
+
+/*styling to make text look more aesthetic, hover added as well for increased readability*/
 
 .songStyle {
   font-size: 8px;
@@ -128,7 +129,7 @@ body{
 }
 
 .traitStyle:hover {
-  background-color: #ff4500;
+  background-color: #40eed7;
   transform: scale(2.05);
 }
 
@@ -137,17 +138,24 @@ body{
   font-family: sans-serif;
 }
 
-.time{
+/*styling to make time for sort look more aesthetic*/
+
+.time {
   text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 200px;
-  margin-top: 160px;
-  margin-left: 300px;
+  margin-top: 175px;
+  margin-left: 250px;
   background-color: #f2f2f2;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  padding: 20px; 
+  border: 2px solid #4CAF50; 
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  font-family: "Arial", sans-serif; 
+  font-size: 16px; 
+  color: #333; 
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
 }

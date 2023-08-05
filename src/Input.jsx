@@ -9,11 +9,11 @@ const Input = (props) => {
     option: "",
     sortOption: "" 
   });
-  const [isSubmitted, setIsSubmitted] = useState(false);  //form is initallys set to false
+  const [isSubmitted, setIsSubmitted] = useState(false);  //form is intially set to false
 
   function handleChange(event) {
     const { name, value } = event.target;
-    setFormData(prevFormData => {
+    setFormData(prevFormData => { //registers input from forms and stores in state
       return {
         ...prevFormData,
         [name]: value
@@ -23,22 +23,27 @@ const Input = (props) => {
     
   }
 
-  function handleSubmit(event) {
+  function handleSubmit(event) {  //submits the form
     event.preventDefault();
     const valid = !isSubmitted;
     setIsSubmitted(valid);
   }
 
-  function handleSubmitRefresh(){
+  function handleSubmitRefresh(){ //submission for trying again
     window.location.reload();
   }
 
+
+
+  //form below 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>  
       <div className='inputs'>
+        {/*inputs for Spotify Artists */}
         <input type="text" name="firstName" placeholder="Spotify Artist 1" value={formData.firstName} onChange={handleChange} />
         <input type="text" name="lastName" placeholder="Spotify Artist 2" value={formData.lastName} onChange={handleChange} />
-
+        
+        {/*inputs for choosing what characteristic*/}
         <div className='selection'>
           <input type="radio" id="html_dance" name="option" value="dance" onChange={handleChange} checked={formData.option === "dance"} />
           <label htmlFor="html_dance">Dance</label>
@@ -49,7 +54,7 @@ const Input = (props) => {
           <input type="radio" id="html_tempo" name="option" value="tempo" onChange={handleChange} checked={formData.option === "tempo"} />
           <label htmlFor="html_tempo">Tempo</label>
         </div>
-
+        {/*inputs for sorting option*/}
         <div className='selection'>
           <input type="radio" id="html_merge_sort" name="sortOption" value="merge" onChange={handleChange} checked={formData.sortOption === "merge"} />
           <label htmlFor="html_merge_sort">Merge Sort</label>
@@ -57,7 +62,7 @@ const Input = (props) => {
           <input type="radio" id="html_quick_sort" name="sortOption" value="quick" onChange={handleChange} checked={formData.sortOption === "quick"} />
           <label htmlFor="html_quick_sort">Quick Sort</label>
         </div>
-
+        {/*form submission - first one is used for finding a match the other is to try again */}
         <button type="submit">Find a match!</button>
         <button type="submit" onClick={handleSubmitRefresh}>Try Again?</button>
       </div>

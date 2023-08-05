@@ -2,8 +2,8 @@ import { useState,useEffect } from 'react'
 import Header from './Header'
 import Input from './Input'
 
-const CLIENT_ID = "330fa14d7def4b9f9955b0c12a160e25"; //api id from spotify used to get access to all artists
-const CLIENT_SECRET = "274b0417c6334a608518fdd4ec9490fd";
+const CLIENT_ID = "29c7e8b8484e412aab9c2dc177789f9f"; //api id from spotify used to get access to all artists
+const CLIENT_SECRET = "608e375e469d46b694dfa908038fe87b";
 
 
 

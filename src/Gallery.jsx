@@ -1,13 +1,12 @@
 import React, { useEffect,useState,useRef,useLayoutEffect } from 'react'
 
 const Gallery = (props) => {
-  const {option,sort} = props;
-  const [data, setData] = useState(props.data);
-  const [time,setTime] = useState(0);
-  const [timing,setTiming] = useState(false);
+  const {option,sort} = props;  //sort option and type of sort is passed down from sort component
+  const [data, setData] = useState(props.data); //data regarding artist is also passed down
+  const [time,setTime] = useState(0); //time is set in state so it can be rendered below and manipulated easier
 
 
-  const quickSort = (arr, option) => {
+  const quickSort = (arr, option) => {  //quicksort function used , conditionals used depending on sorting condition
     if (arr.length <= 1) return arr;
   
     const pivot = arr[0];
@@ -32,7 +31,7 @@ const Gallery = (props) => {
   
   
 
-  const mergeSort = (arr, option) => {
+  const mergeSort = (arr, option) => { //mergesort function used , conditionals used depending on sorting condition
     if (arr.length <= 1) {
       return arr;
     }
@@ -50,7 +49,7 @@ const Gallery = (props) => {
     }
   };
   
-  const merge = (left, right, option) => {
+  const merge = (left, right, option) => {  //mergesort helepr function
     let result = [];
     let leftIndex = 0;
     let rightIndex = 0;
@@ -75,19 +74,18 @@ const Gallery = (props) => {
   };
  
 
-  const startTimeRef = useRef(0);
+  const startTimeRef = useRef(0); //useRef hook used as I ran into many errors trying to incorporate a timer within the useEffect
 
 
   useEffect(()=>{
-    startTimeRef.current = performance.now();
+    startTimeRef.current = performance.now(); //starts timer
 
-    if(sort=='quick'){
+    if(sort=='quick'){  //if quick sort
       const sortedData = quickSort(data,option); 
-      setData(sortedData);
-      console.log(data)
+      setData(sortedData);  //updates data variable to sorteddata
     
     }
-    else if(sort=='merge'){
+    else if(sort=='merge'){ //if merge sort
         const sortedData = mergeSort(data,option); 
         setData(sortedData);  
     }
@@ -103,13 +101,13 @@ const Gallery = (props) => {
 
 
 
-  return (
+  return (  //returns gallery of sorted artitsts
     <div className="gallery">
       {data.map((item) => (
-        <a href={item.url} style={{textDecoration: 'none'}}>
-        <div
+        <a href={item.url} style={{textDecoration: 'none'}}>  {/*anchor tag used so user can click on song */} 
+        <div                // data array mapped over and then is styled to make app more aesthetic
           key={item.id}
-          style={{
+          style={{    
             backgroundColor: "lightgreen",
             display: 'flex',
             justifyContent: 'center',
@@ -122,16 +120,16 @@ const Gallery = (props) => {
             
           }}
         >
-          <p className='artistStyle'>Artist: {item.artist}</p>
-          <p className='songStyle'>Song: {item.name}</p>
-          {option === 'dance' && <p className='traitStyle'>Danceability: {item.danceability}</p>}
+          <p className='artistStyle'>Artist: {item.artist}</p>  {/*artist name displayed */}
+          <p className='songStyle'>Song: {item.name}</p>  {/*song name displayed */}
+          {option === 'dance' && <p className='traitStyle'>Danceability: {item.danceability}</p>} {/*conditional rendering used to display wanted trait */}
           {option === 'energy' && <p className='traitStyle'>Energy: {item.energy}</p>}
           {option === 'tempo' && <p className='traitStyle'>Tempo: {item.tempo}</p>}
         </div>
         </a>
       ))}
-      <h1 className='time'>
-        {time} milliseconds
+      <h1 className='time'>{/*displays time */} 
+      {time.toFixed(3)} milliseconds
       </h1>
     </div>
   );

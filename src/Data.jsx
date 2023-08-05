@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import Gallery from './Gallery';
 
+//this file handles the entire process of gathering the data
+
 const Data = (props) => {
-    const { datas, accessToken } = props; 
-    const [trackData, setTrackData] = useState([]);
+    const { datas, accessToken } = props;   //accesstokena and formdata is pased down
+    const [trackData, setTrackData] = useState([]); //stored in state so it can be passed down
     const [isLoading, setIsLoading] = useState(true);
 
     
-    useEffect(() => {
+    useEffect(() => { //use effect as we only want to do one api call
       const fetchData = async () => {
         const artistParameters = {
           method: 'GET',
@@ -50,7 +52,7 @@ const Data = (props) => {
           const topTracksData2 = await topTracksResponse2.json();
           const topTracks2 = topTracksData2.tracks;
     
-          // Combine top tracks from both artists into a single array
+          // Combine top tracks from both artists into one array
           const combinedTopTracks = [...topTracks1, ...topTracks2];
     
           // Fetch audio features for all tracks
@@ -63,12 +65,12 @@ const Data = (props) => {
               );
               const audioFeaturesData = await audioFeaturesResponse.json();
     
-              // Extract required audio features
+              // Get required audio features
               const tempo = audioFeaturesData.tempo;
               const danceability = audioFeaturesData.danceability;
               const energy = audioFeaturesData.energy;
     
-              // Create an object with the required data for each track
+              // Create an object with the  data for each track
               return {
                 name: track.name,
                 artist: track.artists[0].name,
@@ -88,17 +90,17 @@ const Data = (props) => {
         }
       };
     
-      // Call the fetchData function only once when the component mounts
+      // Called once component is mounted
       fetchData();
-    }, [accessToken, datas]);
+    }, [accessToken, datas]); //new data is fetched if the form changes
     
 
 
-    if (isLoading) {
+    if (isLoading) {  //buffer for when data is loading or invalid input
         return <h1 className='load'>Loading...</h1>;
       }
 
-  return (
+  return (  //passes data from api down to gallery component which handles sorting and rendering
     <Gallery data={trackData} option={datas.option} sort={datas.sortOption}/>
   )
 }
