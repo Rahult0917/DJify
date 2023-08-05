@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Gallery from './Gallery';
 
 const Data = (props) => {
-    const { datas, accessToken } = props;
+    const { datas, accessToken } = props; 
     const [trackData, setTrackData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -99,7 +99,7 @@ const Data = (props) => {
       }
 
   return (
-    <Gallery data={trackData} option={datas.option}/>
+    <Gallery data={trackData} option={datas.option} sort={datas.sortOption}/>
   )
 }
 

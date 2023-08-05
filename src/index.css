@@ -136,3 +136,18 @@ body{
   color:white;
   font-family: sans-serif;
 }
+
+.time{
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  margin-top: 160px;
+  margin-left: 300px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
